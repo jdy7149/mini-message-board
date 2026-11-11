@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head', { title: 'Write a message' }) %>
+  </head>
+  <body>
+    <div class="page">
+      <%- include('partials/header') %>
+      <main class="single-column">
+        <a class="back-link" href="/">← Back to the board</a>
+        <div class="page-intro">
+          <p class="eyebrow">Add your voice</p>
+          <h1>Leave a little hello.</h1>
+          <p class="subtitle">
+            It doesn’t have to be much. A few words can make someone’s day.
+          </p>
+        </div>
+        <form class="form-card" action="/new" method="post">
+          <div class="field">
+            <label for="user">Your name</label
+            ><input
+              type="text"
+              name="user"
+              id="user"
+              placeholder="What should we call you?"
+              autocomplete="nickname"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="text">Your message</label
+            ><textarea
+              name="text"
+              id="text"
+              rows="6"
+              placeholder="What’s on your mind?"
+              required
+            ></textarea>
+          </div>
+          <div class="form-actions">
+            <a class="back-link" href="/">Cancel</a
+            ><button class="button" type="submit">Post message ↗</button>
+          </div>
+        </form>
+      </main>
+      <footer>A small board. A shared space.</footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head', { title: 'Message' }) %>
+  </head>
+  <body>
+    <div class="page">
+      <%- include('partials/header') %>
+      <main class="single-column">
+        <a class="back-link" href="/">← Back to the board</a>
+        <div class="page-intro">
+          <p class="eyebrow">From the board</p>
+          <h1>A moment shared.</h1>
+        </div>
+        <article class="message-card detail-card">
+          <div class="author">
+            <span class="avatar" aria-hidden="true"
+              ><%= (user || '?').charAt(0).toUpperCase() %></span
+            ><span><%= user %></span>
+          </div>
+          <p class="message-text"><%= text %></p>
+          <div class="card-footer">
+            <time datetime="<%= added.toISOString() %>"
+              ><%= added.toLocaleString('en-US', { dateStyle: 'long', timeStyle:
+              'short' }) %></time
+            >
+          </div>
+        </article>
+      </main>
+      <footer>A small board. A shared space.</footer>
+    </div>
+  </body>
+</html>
